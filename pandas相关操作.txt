@@ -1,0 +1,18 @@
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+date = np.arange(1,26,1).reshape(5,5)
+df = pd.DataFrame(date,index=['a','b','d','f','g'],columns=['A','B','C','D','E'],dtype=int)
+print(df)
+print("列元素的数据类型：",df.dtypes)  #第一题
+print("前两行数据：",df[:2])   #第二题
+print("后两行的数据：",df.tail(2))   
+print("行名：",df.columns)    #第三题
+print("列名：",df.index)    
+print("D列的数据值：",df['D'].values)   #第四题
+print("b行的数据值：",df.iloc[1])   #第五题
+print("查看行数和列数：",df.shape)     #第六题
+print("切片形式查看d和f行的所有数据：",df['d':'f'])   #第七题
+print("每一行数据的和:\n",df.sum(1))     #第八题
+print("每一列数据的均值:\n",df.mean())    #第九题
+print("每一行数据的均值:\n",df.mean(1))
