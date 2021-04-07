@@ -1,0 +1,12 @@
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+date = np.arange(1,26,1,dtype=float).reshape(5,5)
+df = pd.DataFrame(date,index=['a','b','d','f','g'],columns=['A','B','C','D','E'])
+df = df.reindex(['a','b','c','d','e','f','g'])
+print("输出二维数组：",df)
+print("用标量值100替换缺失值：",df.fillna(100))
+print("用缺失值的后一行代替缺失值：",df.backfill())
+print("剔除缺失值：",df.dropna(axis=0))
+print("设置任意值替换缺失值：",df.where(df.notnull(),10))
+print("忽略缺失值:""df.dropna():\n{}\n".format(df.dropna()))
